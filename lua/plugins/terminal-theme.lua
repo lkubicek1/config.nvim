@@ -14,8 +14,10 @@ return {
     'lkubicek1/terminal.nvim.private',
     url = 'git@github.com:lkubicek1/terminal.nvim.private.git',
     priority = 1000,
+    lazy = false,
     opts = {},
-    init = function()
+    config = function(_, opts)
+        require('terminal').setup(opts)
         vim.cmd.colorscheme('terminal')
     end,
 }
