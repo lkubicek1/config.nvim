@@ -41,6 +41,12 @@ vim.keymap.set('v', '<leader>p', '"+p', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>P', '"+P', { noremap = true, silent = true })
 vim.keymap.set('v', '<leader>P', '"+P', { noremap = true, silent = true })
 
+-- Move lines/blocks up and down
+vim.keymap.set('n', '<A-j>', '<cmd>m+1<CR>==', { desc = 'Move line down' })
+vim.keymap.set('n', '<A-k>', '<cmd>m-2<CR>==', { desc = 'Move line up' })
+vim.keymap.set('v', '<A-j>', ":m'>+1<CR>gv=gv", { desc = 'Move selection down' })
+vim.keymap.set('v', '<A-k>', ":m'<-2<CR>gv=gv", { desc = 'Move selection up' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
