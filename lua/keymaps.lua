@@ -8,6 +8,26 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- LSP keymaps
+vim.api.nvim_create_autocmd('LspAttach', {
+  desc = 'LSP actions and navigation',
+  group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+  callback = function(event)
+    local map = function(keys, func, desc, mode)
+      mode = mode or 'n'
+      vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+    end
+
+    map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+    map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+    map('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
+    map('gi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+    map('K', vim.lsp.buf.hover, 'Hover Documentation')
+    map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+    map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+  end,
+})
+
 -- Clipboard hotkeys
 -- Map <leader>y to yank to system clipboard
 vim.keymap.set('n', '<leader>y', '"+y', { noremap = true, silent = true })
