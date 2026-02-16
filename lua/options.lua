@@ -76,8 +76,8 @@ vim.o.expandtab = true
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
--- Enable line wrapping
-vim.o.wrap = true
+-- Disable line wrapping
+-- vim.o.wrap = false
 
 -- Highlight max chars per line
 -- vim.o.colorcolumn = '120'
