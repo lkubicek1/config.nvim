@@ -25,6 +25,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
     map('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
     map('gi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+    map('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
     map('K', vim.lsp.buf.hover, 'Hover Documentation')
     map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
     map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
