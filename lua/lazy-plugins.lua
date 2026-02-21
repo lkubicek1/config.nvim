@@ -14,4 +14,5 @@ require('lazy').setup({
     require 'plugins.lsp',
     require 'plugins.completion',
     require 'plugins.copilot',
+    require 'plugins.avante',
 })

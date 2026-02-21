@@ -63,3 +63,17 @@ These are active for inline Copilot suggestions in Insert mode.
 | --- | --- | --- |
 | Insert | `<C-j>` | Accept Copilot suggestion |
 | Insert | `<C-]>` | Dismiss Copilot suggestion |
+
+### Avante mappings (`lua/plugins/avante.lua`)
+
+These mappings are available after lazy-loading `avante.nvim`.
+
+| Mode | Key | Action |
+| --- | --- | --- |
+| Normal, Visual | `<leader>aa` | Ask Avante |
+| Normal, Visual | `<leader>ae` | Edit with Avante |
+| Visual | `<leader>ar` | Refresh Avante request |
+| Normal | `<leader>at` | Toggle Avante sidebar |
+| Normal | `<leader>af` | Focus Avante sidebar |
+| Normal | `<leader>ac` | Close Avante sidebar |
+| Normal | `<leader>an` | Start a new Avante chat |
